@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+:root{
+ /*  --titulos:
+  --texto:  */
+  --color_primario:#212529;
+  --color_secundario:#343a40;
+  --color_tercero:#0d6efd;
+  --color_rosa:#dc3545;
+  --blanco:#E7E7E7;
+}
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.6rem;
+  background-color:var(--color_secundario);
+  font-family: 'Gudea', sans-serif;
+}
+img{
+  max-width: 100%;
+  width: 95%;
+  height:100%;
+}
+a{
+  text-decoration: none;
+}
+
+/* Header */
+header{
+  width: 100%;
+  height: 100%;
+  background-color:var(--color_primario);
+}
+.contenedor_header{
+  width:100%;
+  height:7rem;
+  display: flex;
+  justify-content: center;
+}
+.contenedor_header .header_logo h1{
+  font-size:3rem;
+  color:var(--blanco);
+  line-height:7rem;
+}
+.contenedor_header .menu_header{
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.contenedor_header .menu_header li{
+  margin:0 1.5rem;
+}
+.contenedor_header .menu_header li a{
+  color:var(--color_tercero);
+  font-size:1.7rem;
+  padding:.8rem 1.5rem;
+  transition:all .3s ease;
+  border-radius: .3rem;
+}
+.contenedor_header .menu_header li a:hover , .active,
+  .contenedor_header .menu_header li a.active{
+ background-color:var(--color_tercero);
+ color:var(--blanco);
+}
+.contenedor_header .header_logo p{
+  color: var(--color_tercero);
+  font-size:4rem;
+  line-height:7rem;
+  margin-left: 3rem;
+}
+
+.contenedor{
+  width:100%;
+  height:calc(100vh - 6rem);
+  max-width: 100rem;
+  width: 95%;
+  margin:0 auto;
+  position:relative;
+}
+/* Contenedor Hero */
+
+.contenedor_hero{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color:var(--color_secundario);
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding:0 2rem;
+  transition : all .5s ease;
+  opacity: 0;
+}
+.contenedor_hero .hero_texto,
+.contenedor_hero .hero_img{
+  flex: 0 0 49%;
+  text-align: center;
+}
+.contenedor_hero .hero_texto > h1{
+  color:var(--blanco);
+  font-size:7rem;
+  text-align: center;
+}
+.contenedor_hero .hero_texto > p{
+  color:var(--blanco);
+  font-size: 2.2rem;
+  line-height:3rem;
+  text-align: center;
+  margin-top:3rem;
+}
+.contenedor_hero .hero_texto > a{
+  display: inline-block;
+  padding:1rem 4rem;
+  background-color:var(--color_tercero);
+  color:var(--blanco);
+  font-size:2.5rem;
+  margin: 2rem auto;
+  cursor: pointer;
+  border-radius: .3rem;
+  border: none;
+  transition: all .4s ease;
+}
+.contenedor_hero .hero_texto > a:hover{
+  background-color:var(--color_rosa);
+}
+.contenedor_hero .hero_img{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3rem 2rem;
+}
+
+/* Contenedor Productos */
+
+.contenedor_productos {
+  width: 100%;
+  height:100%;
+  padding:1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition : all .5s ease;
+  opacity: 0;
+  background-color:var(--color_secundario)
+}
+.contenedor_productos > h2 {
+  color:var(--color_tercero);
+  padding:1rem 2rem;
+  font-size:3rem;
+  margin: 2rem 0;
+}
+.card_productos{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  align-items:center;
+}
+.card_productos .producto{
+  flex: 0 0 23%;
+  min-width:20rem;
+  background-color:var(--color_primario);
+  border-radius:.7rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 2px 5px rgba(0,0,0,.5);
+  cursor: pointer;
+}
+
+.card_productos .producto > h2{
+  color: var(--color_tercero);
+  font-size:2rem;
+  margin:1.5rem 0;
+}
+.card_productos .producto > img{
+ object-fit: cover;
+ border-radius: .3rem;
+}
+.card_productos .producto > p{
+  font-size:2rem;
+  color:var(--blanco);
+  margin: 1.7rem 0;
+  padding:0 1rem;
+  text-align:justify,
+}
+.card_productos .info_producto {
+  width: 100%;
+  background-color:var(--blanco);
+  height:5rem;
+  display: flex;
+  justify-content: space-around;
+
+}
+.card_productos .info_producto p,
+.card_productos .info_producto span .icono{
+  line-height:5rem;
+}
+.card_productos .info_producto p{
+  font-weight:bold;
+  font-size:2.2rem;
+}
+.card_productos .info_producto span .icono{
+  font-size:3.3rem;
+  color:var(--color_tercero);
+  cursor: pointer;
+  transition : all .4s ease;
+}
+.card_productos .info_producto span .icono:hover{
+  color:var(--color_rosa);
+}
+
+/* Contenedor_compras */
+.contenedor_compras{
+  color:#fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:var(--color_secundario);
+  transition : all .5s ease;
+  opacity: 0;
+}
+.contenedor_compras > h2{
+  color:var(--color_tercero);
+  padding:1rem 2rem;
+  font-size:3rem;
+  margin: 2rem 0;
+}
+#producto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom:.2rem solid var(--blanco) ;
+  padding:1rem;
+}
+
+#producto > div{
+  flex: 0 0 20% ;
+  min-width: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#titulo > p {
+  font-size :3rem;
+}
+#cantidad > input{
+  outline:none;
+  width:50%;
+  padding:1rem 2rem;
+  font-size:2rem;
+}
+#precio > p{
+  font-size :3rem;
+}
+.eliminar{
+  border: none;
+  background:none;
+  color: var(--rosa);
+  padding:1rem;
+}
+.eliminar .icono{
+  color:var(--color_tercero);
+  font-size:4rem;
+  cursor: pointer;
+  transition : all .3s ease;
+}
+.eliminar .icono:hover{
+  color:var(--color_tercero);
+  color:#DF1313;
+}
+
+
+
+.mostrarSeccion{
+  z-index:100;
+  opacity: 1;
+}
+
+
+#pago_final{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#pago_final > p{
+  font-size:3rem;
+  color:var(--blanco);
+}
+
+#pago_final > a {
+  margin-left: 2rem;
+  padding:.7rem 2rem;
+  background-color:var(--color_tercero);
+  color:var(--blanco);
+  font-size:2rem;
+  cursor: pointer;
+  border-radius: .3rem;
+  border: none;
+  transition: all .4s ease;
+}
+#pago_final > a:hover{
+  background-color:var(--color_rosa);
+}
+#pago {
+  font-size:4rem;
+  margin-left: 2rem;
+}
