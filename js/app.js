@@ -1,5 +1,7 @@
 const d=document,
  ls=localStorage,
+ btnHamburguer=d.querySelector(".btnHamburguer i"),
+ menu=d.querySelector(".menu_header"),
  link=d.querySelectorAll(".menu_header a"),
  secciones=d.querySelectorAll(".contenedor section"),
  buttons=d.querySelectorAll(".producto .icono"),
@@ -19,7 +21,7 @@ class UI{
  ActualizarCompra(titulo,cantidad){
   carrito.forEach(compra=>{
     if(compra.titulo===titulo){
-      compra.cantidad=cantidad;
+      compra.cantidad=Number(cantidad);
       this.pagoFinal();
     }
   })
@@ -97,7 +99,11 @@ class UI{
       })
 
       d.addEventListener("click",(e)=>{
-
+          if(e.target.className === btnHamburguer.className){
+              menu.classList.toggle("active");
+          }else{
+            menu.classList.remove("active");
+          }
           if(e.target.matches(".eliminar .icono")){
             const ui= new UI();
             producto=e.target.closest("#producto");
@@ -105,7 +111,7 @@ class UI{
             producto.remove(producto);
             ui.EliminarCompra(titulo);
           }
-      
+          
       })
 
 
@@ -130,15 +136,3 @@ class UI{
           })
         })
 
-
-        d.addEventListener("DOMContentLoaded",()=>{
-          if(ls.getItem("carrito")===null){
-              ls.setItem("carrito",carrito);//seteamos un valor por defecto a  theme
-          }
-          if(ls.getItem("carrito")){
-            const ui=new UI();
-            ui.ActualizarCarrito();
-          }  
-    
-       });
-       
