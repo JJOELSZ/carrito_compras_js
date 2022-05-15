@@ -50,10 +50,10 @@ a{
   font-size:2rem;
 }
 .message.add{
-  background-color:green;
+  background-color:#1FAB14;
 }
 .message.delete{
-  background-color:red;
+  background-color:#DF4413;
 }
 /* Header */
 header{
