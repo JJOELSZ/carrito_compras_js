@@ -9,6 +9,7 @@
   --color_rosa:#dc3545;
   --blanco:#E7E7E7;
 }
+
 *{
   padding:0;
   margin: 0;
@@ -35,7 +36,25 @@ a{
 .btnHamburguer{
   display: none;
 }
-
+.message{
+  position:fixed;
+  top:7rem;
+  left:0;
+  width: 100%;
+  height:4rem;
+  z-index: 1000;
+  text-align:center;
+  line-height:4rem;
+  color:var(--blanco);
+  font-weight:bold;
+  font-size:2rem;
+}
+.message.add{
+  background-color:green;
+}
+.message.delete{
+  background-color:red;
+}
 /* Header */
 header{
   width: 100%;
@@ -230,7 +249,10 @@ header{
   height: 100%;
   background-color:var(--color_secundario);
   transition : all .5s ease;
-  opacity: 0;
+}
+.mostrarSeccion{
+  z-index:100;
+  opacity: 1;
 }
 .contenedor_compras > h2{
   color:var(--color_tercero);
@@ -241,7 +263,7 @@ header{
 .compra_listado{
 
 }
-#producto{
+.producto-select{
   width: 100%;
   display: flex;
   justify-content: center;
@@ -250,48 +272,52 @@ header{
   padding:1rem;
 }
 
-#producto > div{
+.producto-select > div{
   flex: 0 0 20% ;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-#titulo > p {
+.producto_titulo > p {
   font-size :3rem;
 }
-#cantidad > input{
+.producto_titulo > input{
   outline:none;
   width:50%;
   padding:1rem 2rem;
   font-size:2rem;
 }
-#precio > p{
+.producto_imagen img{
+  width:100px;
+}
+.producto_precio > p{
   font-size :3rem;
 }
-.eliminar{
+.producto_cantidad input{
+  padding: 1rem;
+  outline:none;
+  max-width:5rem;
+}
+.producto_eliminar .eliminar{
   border: none;
   background:none;
   color: var(--rosa);
   padding:1rem;
 }
-.eliminar .icono{
+.producto_eliminar .eliminar .icono{
   color:var(--color_tercero);
   font-size:4rem;
   cursor: pointer;
   transition : all .3s ease;
 }
-.eliminar .icono:hover{
+.producto_eliminar .eliminar .icono:hover{
   color:var(--color_tercero);
   color:#DF1313;
 }
 
 
 
-.mostrarSeccion{
-  z-index:100;
-  opacity: 1;
-}
 
 
 #pago_final{
@@ -346,12 +372,12 @@ align-items: center;
     top:7rem;
     right:-100%;
     width:30rem;
-    z-index: 999;
+    z-index: 200;
     background-color:rgba(20,20,20);
     padding:4rem 0;
     flex-flow: column;
     opacity: 0;
-    
+    z-index: 999;
     transition: all .7s ease;
   }
   .contenedor_header .menu_header.active{
@@ -395,14 +421,24 @@ align-items: center;
   }
   .card_productos .producto{
     flex :0 0 48%;
-}
+  }
+  .producto-select{
+    flex-wrap: wrap;
+  }
 
-}
+  .producto-select > div{
+    flex: 0 0 30% ;
+  }
+  }
 
 @media (max-width:500px) {
   .card_productos{
     justify-content:center;
   }
   .card_productos .producto{
-    flex :0 0 100%;
-}}
+    flex :0 0 80%;
+}
+
+}
+
+
